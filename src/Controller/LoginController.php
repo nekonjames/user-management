@@ -16,5 +16,4 @@ if (!$result['success']) {
 }
 
 $_SESSION['user_id'] = $result['user']['id'];
-$_SESSION['users'] = $userModel->loadAll();
 header("Location: ../../public/users.php");

@@ -8,7 +8,9 @@ if (empty($_SESSION['user_id'])) {
     exit;
 }
 
-$users = $_SESSION['users'];
+$userService = require '../src/Service/UserService.php';
+
+$users = $userService->loadAll();
 ?>
 
 <html>

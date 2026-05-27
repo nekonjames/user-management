@@ -15,7 +15,7 @@
         <div class="error"><?= $_SESSION['error']; unset($_SESSION['error']); ?></div>
     <?php endif; ?>
 
-    <form method="POST" action="../src/Controller/registerController.php">
+    <form method="POST" action="../src/Controller/RegisterController.php">
         <input type="text" name="username" placeholder="Username" required>
         <input type="email" name="email" placeholder="Email" required>
         <input type="password" name="password" placeholder="Password" required>

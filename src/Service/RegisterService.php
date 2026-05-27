@@ -15,12 +15,16 @@ class RegisterService
         }
 
         $emailExist = $this->userModel->findByEmail($data['email']);
-
         if ($emailExist) {
             return ['success' => false, 'errors' => ['Email already exists']];
         }
 
-        $hashed = password_hash($data['password'], PASSWORD_BCRYPT);
+        $usernameExist = $this->userModel->findByUsername($data['username']);
+        if ($usernameExist) {
+            return ['success' => false, 'errors' => ['Username already exists']];
+        }
+
+        $hashed = password_hash($data['password'], PASSWORD_DEFAULT);
 
         $this->userModel->create(
             $data['username'],

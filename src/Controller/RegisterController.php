@@ -17,5 +17,5 @@ if (!$result['success']) {
     header("Location: ../../public/register.php");
     exit;
 }
-
+$_SESSION['success'] = "Your account has been created. login to continue.";
 header("Location: ../../public/login.php");

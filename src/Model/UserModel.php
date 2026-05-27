@@ -26,6 +26,17 @@ class UserModel
         return $preparedStatement->fetch() ?: null;
     }
 
+    public function findByUsername(string $username): array|null
+    {
+        $preparedStatement = $this->pdo->prepare("
+            SELECT * FROM users WHERE username = ?
+        ");
+
+        $preparedStatement->execute([$username]);
+
+        return $preparedStatement->fetch() ?: null;
+    }
+
     public function loadAll(): array
     {
         return $this->pdo->query("SELECT username, email, created_at FROM users")->fetchAll();

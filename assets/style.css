@@ -45,6 +45,11 @@ button:hover {
     margin-bottom: 10px;
     text-align: center;
 }
+.success {
+    color: green;
+    margin-bottom: 10px;
+    text-align: center;
+}
 
 table {
     width: 80%;
