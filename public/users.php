@@ -7,10 +7,9 @@ if (empty($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;
 }
+use App\Service\UserService;
 
-$userService = require '../src/Service/UserService.php';
-
-$users = $userService->loadAll();
+$users = UserService::getAllUsers();
 ?>
 
 <html>
