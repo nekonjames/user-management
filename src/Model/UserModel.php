@@ -1,8 +1,10 @@
 <?php
+namespace App\Model;
+
 class UserModel
 {
     public function __construct(
-        private PDO $pdo
+        private \PDO $pdo
     ) {}
 
     public function create(string $username, string $email, string $password): bool

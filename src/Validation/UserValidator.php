@@ -1,4 +1,5 @@
 <?php
+namespace App\Validation;
 class UserValidator
 {
     public function validate(array $data): array

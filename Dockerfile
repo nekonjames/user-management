@@ -16,12 +16,14 @@ RUN a2enmod rewrite
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
+ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
 
 # Copy only composer files first (better caching)
 COPY composer.json /var/www/html/
 
 # Install dependencies
 RUN composer install
+RUN composer dump-autoload
 
 # Copy application code
 COPY . /var/www/html/

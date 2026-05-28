@@ -1,5 +1,6 @@
 <?php
-require __DIR__ .'/../Model/UserModel.php';
-require __DIR__ .'/../Database/Connection.php';
+
+use App\Database\Connection;
+use App\Model\UserModel;
 
 return new UserModel(Connection::getConnection());

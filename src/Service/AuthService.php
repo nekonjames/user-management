@@ -1,4 +1,7 @@
 <?php
+namespace App\Service;
+use App\Model\UserModel;
+
 class AuthService
 {
     public function __construct(

@@ -1,4 +1,9 @@
 <?php
+namespace App\Service;
+
+use App\Model\UserModel;
+use App\Validation\UserValidator;
+
 class RegisterService
 {
     public function __construct(
