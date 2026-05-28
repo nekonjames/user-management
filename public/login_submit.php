@@ -4,6 +4,12 @@ require __DIR__ . '/../vendor/autoload.php';
 
 session_start();
 
+if ($_SERVER['REQUEST_METHOD'] !== 'POST' || empty($_POST['email']) || empty($_POST['password']) ) {
+    $_SESSION['error'] = "Invalid Request";
+    header("Location: login.php");
+    exit;
+}
+
 use App\Database\Connection;
 use App\Model\UserModel;
 use App\Service\AuthService;
